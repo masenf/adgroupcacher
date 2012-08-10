@@ -1,0 +1,7 @@
+base	adgroupcacher
+author	Masen Furer
+email	Masen.Furer@wwu.edu
+date    2012-08-07
+name    AD Group Cacher
+desc    Cache select groups from AD/LDAP at a given time interval based on virtualgroup plugin
+url     http://www.dokuwiki.org/plugin:adgroupcacher

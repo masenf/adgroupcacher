@@ -1,0 +1,33 @@
+div.dokuwiki .adgc fieldset {
+    width:75%;
+    margin-bottom:2em;
+}
+
+div.dokuwiki .adgc label span {
+    float:left;
+	margin-right: 2em;
+}
+
+div.dokuwiki .adgc input {
+    float:left;
+}
+
+div.dokuwiki .adgc input.button {
+    float:none;
+	width: 10em;
+}
+
+#adgc__show td.act{
+    text-align:center;
+}
+
+#adgc__show {
+    width:100%;
+    margin-top:2em;
+}
+
+#adgc__show a.adgc_del {
+    background: url(images/user_delete.png) no-repeat;
+    padding-left: 18px;
+    padding-top: 2px;
+}
