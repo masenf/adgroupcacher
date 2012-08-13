@@ -204,11 +204,13 @@ class admin_plugin_adgroupcacher extends DokuWiki_Admin_Plugin {
         ptln('  </tr>');
 
         global $USERINFO;
-        foreach ($USERINFO['grps'] as $grp) {
-            ptln('  <tr>');
-            ptln('    <td>'.hsc($grp).'</td>');
-            ptln('  </tr>');
-        }
+		if (isset($USERINFO['grps'])) {
+			foreach ($USERINFO['grps'] as $grp) {
+				ptln('  <tr>');
+				ptln('    <td>'.hsc($grp).'</td>');
+				ptln('  </tr>');
+			}
+		}
 
         ptln('</table>');
     }

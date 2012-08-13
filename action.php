@@ -49,6 +49,8 @@ class action_plugin_adgroupcacher extends DokuWiki_Action_Plugin {
         if (!isset($this->users[$_SERVER['REMOTE_USER']])) {
             return;
         }
+		if (!isset($USERINFO['grps']))
+			$USERINFO['grps'] = array();
 
         $grps = array_unique(array_merge($USERINFO['grps'],$this->users[$_SERVER['REMOTE_USER']]));
         $USERINFO['grps']       = $grps;
@@ -56,6 +58,11 @@ class action_plugin_adgroupcacher extends DokuWiki_Action_Plugin {
         $INFO = pageinfo();
     }
 	function update_data () {
+		if (empty($this->base_dn)) {
+			msg("Please set a base DN for adgroupcacher in admin area",2);
+			return;
+		}
+
 		// load cached user_dn => sAMAccountName data
 		$this->user_dn = (($data = array_load(USERFILE)) == False) ? array() : $data;
 
