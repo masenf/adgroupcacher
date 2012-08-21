@@ -160,9 +160,9 @@ class admin_plugin_adgroupcacher extends DokuWiki_Admin_Plugin {
 		if ($this->update_interval == 0) {
 			$nxtupdate = $this->getLang('never');
 		} else {
-			$nxtupdate = round($this->update_interval - ((time() - $this->last_update) / 60),2) . $this->getLang('minutes');
+			$nxtupdate = round($this->update_interval - ((time() - $this->last_update) / 60),2) . " " . $this->getLang('minutes');
 		}
-		$form->addElement("<br><br>" , sprintf($this->getLang('nxtupdate'), $nxtupdate) . "&nbsp;&nbsp;&nbsp; ");
+		$form->addElement("<br><br>" . sprintf($this->getLang('nxtupdate'), $nxtupdate) . "&nbsp;&nbsp;&nbsp; ");
 		$form->addElement(form_makeButton('submit', '',
 										  $this->getLang('refreshnow'),
 										  array('name' => 'refreshnow')));
