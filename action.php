@@ -49,12 +49,12 @@ class action_plugin_adgroupcacher extends DokuWiki_Action_Plugin {
         if (!isset($this->users[$_SERVER['REMOTE_USER']])) {
             return;
         }
-		if (!isset($USERINFO['grps']))
-			$USERINFO['grps'] = array();
-
-        $grps = array_unique(array_merge($USERINFO['grps'],$this->users[$_SERVER['REMOTE_USER']]));
-        $USERINFO['grps']       = $grps;
-        $_SESSION[DOKU_COOKIE]['auth']['info']['grps'] = $grps;
+//		if (!isset($USERINFO['grps']))
+//			$USERINFO['grps'] = array();
+//
+//        $grps = array_unique(array_merge($USERINFO['grps'],$this->users[$_SERVER['REMOTE_USER']]));
+//        $USERINFO['grps']       = $grps;
+//        $_SESSION[DOKU_COOKIE]['auth']['info']['grps'] = $grps;
         $INFO = pageinfo();
     }
 	function update_data () {
@@ -188,8 +188,6 @@ class action_plugin_adgroupcacher extends DokuWiki_Action_Plugin {
      * load the users -> group connection
      */
     function _load() {
-		global $conf;
-
 		$data = array_load(SETTINGSFILE);
 		if ($data) {
 			$this->groups = $data['groups'];
